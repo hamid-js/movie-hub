@@ -15,7 +15,7 @@ import WatchedList  from "./feature/WatchedList";
 import ErrorMessage  from "./feature/ErrorMessage";
 import Loader  from "./feature/Loader";
 
-export const average = (arr) => arr?.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+export const average = (arr) => arr?.reduce((acc, cur, i, arr) => acc + cur / arr?.length, 0);
 
 export const KEY = "1d233f7f";
 
