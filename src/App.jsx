@@ -103,7 +103,7 @@ export default function App() {
         }
       }
 
-      if (query.length < 3) {
+      if (query?.length < 3) {
         setMovies([]);
         setError("");
         return;
@@ -136,7 +136,7 @@ export default function App() {
             </MoviesList>
           )}
           {error && <ErrorMessage message={error} />}
-          {!movies.length && <p className="list-empty"> Start searching for your favorite movie...😍</p>}
+          {!movies?.length && <p className="list-empty"> Start searching for your favorite movie...😍</p>}
         </ListBox>
 
         <ListBox>
