@@ -25,7 +25,8 @@ body {
     "Helvetica Neue", sans-serif;
 
   color: var(--color-text);
-  background-image: url(/bg.jpg);
+  /* background-image: url(/bg.jpg); */
+  background-color: var(--color-background-900);
   background-position: center;
   background-size: cover;
   padding: 2.4rem;
