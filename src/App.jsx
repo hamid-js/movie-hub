@@ -94,7 +94,7 @@ export default function App() {
           setError("");
         } catch (err) {
           if (err.name !== "AbortError") {
-            console.log(err.message);
+            console.log(err?.message);
             setError(err.message);
             setMovies([]);
           }
