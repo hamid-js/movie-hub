@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StarRating from "./StarRating";
-import { KEY } from "../App2";
+import { KEY } from "../App";
 import Loader from "./Loader";
 
 export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
