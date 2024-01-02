@@ -16,12 +16,12 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
   //   if (watach.imdbId === selectedId);
   //    return true;
   // });
-  const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
+  const isWatched = watched?.map((movie) => movie.imdbID).includes(selectedId);
 
 
   // //detecte user rating
   // const watachUserRating = watched?.find((movie) => movie.imdbId === selectedId)?.userRating;
-  const watchedUserRating = watched.find(
+  const watchedUserRating = watched?.find(
     (movie) => movie.imdbID === selectedId
   )?.userRating;
 
