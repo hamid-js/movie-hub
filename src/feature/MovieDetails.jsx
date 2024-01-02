@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import StarRating from "./StarRating";
-import { KEY } from "../App";
-import  Loader  from "./Loader";
+import { KEY } from "../App2";
+import Loader from "./Loader";
 
 export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   //STSTES
@@ -9,18 +9,11 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
 
-
-  
-  
   // Checking watch list
   const isWatched = watched?.map((movie) => movie.imdbID).includes(selectedId);
 
-
-  
   //detecte user rating
-  const watchedUserRating = watched?.find(
-    (movie) => movie.imdbID === selectedId
-  )?.userRating;
+  const watchedUserRating = watched?.find((movie) => movie.imdbID === selectedId)?.userRating;
 
   // DESTRUCTURE & RENAME DATAS
   const {
@@ -128,15 +121,12 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
                     </button>
                   )}
                 </>
-              ) : 
-              (
+              ) : (
                 <p>
-                  
                   This Movie Exsist in your Watch list : {watchedUserRating}
                   <span>⭐</span>
                 </p>
-              )
-              }
+              )}
             </div>
             <p>
               <em>{plot}</em>

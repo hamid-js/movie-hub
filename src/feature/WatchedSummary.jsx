@@ -1,4 +1,4 @@
-import { average } from "../App";
+import { average } from "../App2";
 
 export default function WatchedSummary({ watched }) {
   const avgImdbRating = average(watched?.map((movie) => movie.imdbRating));
