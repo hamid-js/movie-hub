@@ -10,7 +10,7 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
   const [userRating, setUserRating] = useState("");
 
   // Checking watch list
-  const isInWatch = watched.some((watach) => {
+  const isInWatch = watched?.some((watach) => {
     if (watach.imdbId === selectedId) return true;
   });
 
