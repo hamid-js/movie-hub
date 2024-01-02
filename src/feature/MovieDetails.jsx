@@ -9,14 +9,21 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
 
-  // Checking watch list
-  const isInWatch = watched?.some((watach) => {
-    if (watach.imdbId === selectedId);
-     return true;
-  });
 
-  //detecte user rating
-  const watachUserRating = watched?.find((movie) => movie.imdbId === selectedId)?.userRating;
+  
+  // // Checking watch list
+  // const isInWatch = watched?.some((watach) => {
+  //   if (watach.imdbId === selectedId);
+  //    return true;
+  // });
+  const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
+
+
+  // //detecte user rating
+  // const watachUserRating = watched?.find((movie) => movie.imdbId === selectedId)?.userRating;
+  const watchedUserRating = watched.find(
+    (movie) => movie.imdbID === selectedId
+  )?.userRating;
 
   // DESTRUCTURE & RENAME DATAS
   const {
@@ -115,7 +122,7 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
           </header>
           <section>
             <div className="rating">
-              {!isInWatch ? (
+              {!isWatched ? (
                 <>
                   <StarRating maxRating={10} size={24} onSetRating={setUserRating} />
                   {userRating > 0 && (
@@ -124,13 +131,15 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
                     </button>
                   )}
                 </>
-              ) : (
+              ) : 
+              (
                 <p>
-                  {" "}
-                  This Movie Exsist in your Watch list : {watachUserRating}
+                  
+                  This Movie Exsist in your Watch list : {watchedUserRating}
                   <span>⭐</span>
                 </p>
-              )}
+              )
+              }
             </div>
             <p>
               <em>{plot}</em>
