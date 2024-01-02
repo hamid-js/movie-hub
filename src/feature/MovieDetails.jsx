@@ -53,7 +53,7 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
       async function fetchMoviesDetails() {
         try {
           setIsLoading(true);
-          const res = await fetch(`http://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`);
+          const res = await fetch(`https://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`);
           if (!res.ok) throw new Error("MovieDetails cant fetch");
           const data = await res.json();
           if (data.Response === "False") throw new Error("Movie not found");
