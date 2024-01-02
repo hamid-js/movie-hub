@@ -15,7 +15,7 @@ export default function MovieDetails({ selectedId, onCloseMovie, onAddWatched, w
   });
 
   //detecte user rating
-  const watachUserRating = watched.find((movie) => movie.imdbId === selectedId)?.userRating;
+  const watachUserRating = watched?.find((movie) => movie.imdbId === selectedId)?.userRating;
 
   // DESTRUCTURE & RENAME DATAS
   const {
